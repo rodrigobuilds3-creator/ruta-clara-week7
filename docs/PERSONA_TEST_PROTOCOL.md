@@ -1,7 +1,7 @@
 # Synthetic Persona Review — Method and Evidence Record
 
 **Date:** 24 Sep 2026
-**Status:** Partial, text-only synthetic review completed; image-based validation remains incomplete. The final copy revision is local and still requires deployment/retest.
+**Status:** Partial, text-only synthetic review completed on the final copy wording; image-based validation remains incomplete. The final copy is deployed, but the persona chat did not receive screenshots.
 **Participant:** ChatGPT-generated hypothetical persona “Doña Mari”; no human driver was interviewed.
 
 ## Method limitation
@@ -33,7 +33,7 @@ In text-only retests, the synthetic persona said the revised wording made the se
 
 ## Verification and evidence boundary
 
-- The final local copy revision, including the definition of “peak (g)” and its effect on the review-suggestion label, passed **12/12** tests; the static build emitted five public files. This has not yet been verified by public CI or a new deployment.
+- The final copy revision, including the definition of “peak (g)” and its effect on the review-suggestion label, passed **12/12** tests in GitHub Actions run `36014715432`; the static deployment emitted five public files.
 - Screenshots in evidence/ predate the copy changes. No post-fix screenshot has been attached to the persona conversation or captured as visual retest evidence.
 - This review does not test phone sensor permission behavior, intermittent connectivity, offline operation, real task completion time, adoption, payment, authority response, or safety outcomes.
 - Before describing a screenshot-based persona test as complete, attach the ordered, updated screenshots to a fresh synthetic-persona chat and repeat the tasks. For stronger validity, also test with consenting real users under an approved research protocol; do not represent an AI persona as a substitute for them.

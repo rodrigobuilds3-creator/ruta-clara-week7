@@ -63,5 +63,12 @@
 - Revised the hero, seeded verified-case card, status, payment label, pilot-principles section, sensor disclosure, and footer so the UI does not imply a real verifier, payer, worker-control capability, personal-data screening, or measured completion time.
 - The motion disclosure states the three-second capture, derived peak definition, tab-memory lifetime, raw-event discard, optional review-suggestion role, lack of field validation, and absence of GPS/continuous-route tracking. A fresh text-only synthetic retest found this understandable but still reasonably questioned the sensor's unproven value. It remains optional; no phone or real driver was tested.
 - `npm test`: **12/12 passed** locally after the final copy. `npm run build` emitted five static public files. These local checks do not establish a new public deployment.
-- The public app/repository remain at the third verified deployment until the new revision is pushed and CI/deploy succeeds. A post-deploy live smoke test is still required.
+- At the time this local review was first written, the public site was still at deployment three and the live smoke test was pending. The following entry records the verified push, deployment, and retest.
 - The synthetic persona conversation received manual text transcriptions, not screenshot attachments. Existing evidence screenshots predate this copy; visual persona evaluation remains incomplete. No demo video has been recorded.
+
+## Deployed copy revision and live acceptance smoke test
+
+- Commit `fd0604c` was pushed to `main`; GitHub Actions run `36014715432` completed successfully in 28 seconds. CI passed all **12 tests** and the build emitted five files. This is the fourth verified public deployment; history now contains 14 meaningful commits.
+- Reloaded the live HTTPS URL and confirmed the new hero, “roles simulados,” revised sensor disclosure, “Elegibilidad hipotética (demo),” and pilot-only principles.
+- Live functional smoke test used only invented text and an illustrative map point. `RC-015` was created; a simulated rejection left **2 abiertos**; correction/resubmission retained both open cases and the history; simulated verification kept the case open and payment hypothetical; simulated closure moved the count to **1 abierto**, with the seeded case still unresolved. The case never left the browser or reached an authority.
+- The live workflow and UI claim boundary passed. This does not close the screenshot-based persona requirement: the synthetic chat did not receive images, the preserved screenshots predate the copy changes, and no real driver test occurred.
