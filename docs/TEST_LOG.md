@@ -28,3 +28,11 @@
 - On mobile, an invented report was submitted and focus moved to its newly created case. The form/map/ledger flow still works after the redesign.
 - White text on the primary button improved from approximately 3.29:1 to 5.0:1 contrast by darkening the teal background.
 - This is a local smoke test; no public deployment or independent persona test is claimed.
+
+## Static release package
+
+- `npm test`: 10/10 passed, including a build-manifest check that only `index.html`, CSS, JavaScript modules and the generated marker enter `dist/`.
+- `npm run build` completed; the packaged app opened at `http://127.0.0.1:4177/dist/` with the main form, map and ledger visible. A narrow browser screenshot showed the refreshed layout intact.
+- In that packaged app, an invented bache report created `RC-015`; simulated verification changed it from “Pendiente de verificar / Aún no elegible” to “Verificado · cierre pendiente / Pago elegible · no transferido.” This was a local browser smoke test, not a real payment or deployment.
+- A persona test protocol is ready in `docs/PERSONA_TEST_PROTOCOL.md`. No fresh chat or participant observation has been performed.
+- GitHub authentication remains invalid; there is still no public URL, first/second deployment or redeployment after a public test.

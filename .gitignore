@@ -1,0 +1,3 @@
+dist/
+.dist-tmp-*/
+.DS_Store
