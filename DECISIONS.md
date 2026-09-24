@@ -11,3 +11,13 @@
 **Verified local progress:** map/report/ledger implemented; 9 unit tests pass. A blank motion field was incorrectly converted to zero, then fixed and retested in the browser. After a new report, focus moves to its case record.
 
 **Next first move:** choose a public hosting/repository route, publish v1 and v2 with a documented fix, then conduct the required independent fresh-chat persona test using ordered screen captures. Do not describe the local test as a redeploy.
+
+## 2026-09-23 · session 2 / startup visual refinement
+
+- Applied the design-critique framework to the original browser view: stronger first action, clearer reading order, consistent panels and better mobile task access.
+- The decorative signal card is desktop-only; mobile keeps the action and disclosure without pushing the form farther down.
+- The primary button now uses darker teal for approximately 5:1 white-text contrast. Small actions have at least 44 px height.
+- Replaced the potentially misleading “0 personal data” hero metric with the true local-demo statement “0 external sends.”
+- Product logic and the Blueprint boundary did not change. This is not evidence of a live team vote, public deployment or persona test.
+
+**Next first move:** publish through a dedicated Week 7 repository/host once access and audience are resolved; then run the required independent persona walkthrough and record the video at the verified URL.

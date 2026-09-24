@@ -6,9 +6,12 @@ Prototipo académico de la propuesta individual de Rodrigo Peña de León Pérez
 
 - Packet pre-código: [`docs/PACKET.md`](docs/PACKET.md), con mockup generado, benchmark, Mermaid, arquitectura, pruebas y condiciones.
 - Implementación: mapa ilustrativo, formulario validado, kNN entrenado solo con ejemplos inventados, muestra opt-in de movimiento o simulación, registro de casos y controles de roles simulados.
+- Diseño: interfaz renovada de estilo startup, con portada de producto, navegación, estados legibles y adaptación móvil. [Revisión de diseño](docs/DESIGN_REVIEW.md).
 - Pruebas: `node --test tests/*.test.mjs` (9 pasan al 23 sep 2026). La prueba manual confirmó alta, verificación/pago elegible, validación de muestra vacía y foco en el caso creado.
 - PDF de packet: `../../../../output/pdf/PACKET_Rodrigo_Pena_WEEK7.pdf`.
-- **Pendiente:** URL HTTPS pública, cinco commits, dos despliegues, prueba de persona en chat fresco con capturas, vídeo, BUILDCHAT completo y entrega en Brightspace.
+- Repositorio local independiente: cinco commits iniciales completados; falta publicar en GitHub y hacer push.
+- **Pendiente:** URL HTTPS pública, dos despliegues, prueba de persona en chat fresco con capturas, vídeo, BUILDCHAT completo y entrega en Brightspace.
+- [Guía para grabar la demo](docs/DEMO_SHOTLIST.md).
 
 ## Ejecutar
 

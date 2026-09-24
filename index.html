@@ -3,23 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#183451">
+  <meta name="theme-color" content="#0c1b2b">
   <meta name="description" content="Ruta Clara: prototipo simulado de reportes de riesgo vial con verificación y control del conocimiento de conductores.">
   <title>Ruta Clara · Piloto simulado</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style-v2.css">
   <script type="module" src="./app.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">Ir al contenido</a>
   <header class="site-header">
-    <div class="brand"><span class="brand-mark" aria-hidden="true">◆</span><div><strong>Ruta Clara</strong><small>Conocimiento que cuida la ruta</small></div></div>
-    <span class="demo-pill">Piloto simulado · datos inventados</span>
+    <div class="header-inner">
+      <a class="brand" href="#main" aria-label="Ruta Clara, ir al inicio"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M7 29 15 7M29 29 21 7"/><path d="M18 13v3m0 5v3"/></svg></span><span><strong>Ruta Clara</strong><small>Inteligencia para la ruta</small></span></a>
+      <nav class="main-nav" aria-label="Navegación principal"><a href="#report-title">Reportar</a><a href="#map-title">Mapa</a><a href="#ledger-title">Casos</a><a href="#conditions">Principios</a></nav>
+      <div class="header-actions"><span class="demo-pill"><span class="pill-dot" aria-hidden="true"></span>Demo con datos inventados</span><a class="header-cta" href="#report-title">Probar demo <span aria-hidden="true">↗</span></a></div>
+    </div>
   </header>
   <main id="main" class="shell">
     <section class="hero" aria-labelledby="hero-title">
-      <div><p class="eyebrow">SEMANA 07 / RODRIGO · ADVERSARY</p><h1 id="hero-title">Reportar no basta. <em>Hay que responder.</em></h1><p>Un registro de riesgos para conductores de colectivo: el conocimiento se verifica, se reconoce y no desaparece cuando el caso sigue abierto.</p></div>
-      <aside class="hero-note"><strong>Antes de un piloto real</strong><span>Faltan corredor y paradas, operador, pagador, responsable de datos y firmante del cierre. Esta pantalla no envía nada a una autoridad.</span></aside>
+      <div class="hero-content"><p class="hero-kicker"><span aria-hidden="true"></span> MOVILIDAD COLECTIVA · SEMANA 07</p><h1 id="hero-title">La ruta sabe dónde está el riesgo. <em>Hagámoslo visible.</em></h1><p>Del reporte a la respuesta: conocimiento del conductor, verificación independiente y un caso que permanece abierto hasta tener cierre.</p><div class="hero-actions"><a href="#report-title" class="hero-primary">Crear reporte de prueba <span aria-hidden="true">↗</span></a><a href="#ledger-title" class="hero-secondary">Explorar casos <span aria-hidden="true">→</span></a></div><div class="hero-foot"><span><strong>01</strong> corredor ilustrativo</span><span><strong>0</strong> envíos externos</span><span><strong>2</strong> decisiones humanas</span></div></div>
+      <div class="hero-visual" aria-hidden="true"><div class="visual-top"><span><i></i> SEÑAL DE RUTA</span><span>DEMO / RC-014</span></div><svg class="visual-route" viewBox="0 0 470 250"><defs><linearGradient id="route-glow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#35e4ce"/><stop offset="1" stop-color="#ffc477"/></linearGradient></defs><path class="visual-grid" d="M0 52H470M0 104H470M0 156H470M0 208H470M60 0V250M150 0V250M240 0V250M330 0V250M420 0V250"/><path class="visual-path-back" d="M18 190C90 193 88 72 170 84S233 223 315 172S361 66 450 57"/><path class="visual-path" d="M18 190C90 193 88 72 170 84S233 223 315 172S361 66 450 57"/><circle cx="18" cy="190" r="9"/><circle cx="450" cy="57" r="9"/><circle class="visual-risk" cx="318" cy="170" r="19"/><text x="318" y="177" text-anchor="middle">!</text></svg><div class="visual-case"><span class="visual-case-icon">✓</span><span><strong>Riesgo verificado</strong><small>Pago elegible · cierre pendiente</small></span><span class="visual-case-arrow">↗</span></div><div class="visual-bottom"><span>ATIZAPÁN · MAPA ILUSTRATIVO</span><span>NO ES DATO EN VIVO</span></div></div>
     </section>
+
+    <aside class="readiness-note"><span class="readiness-icon" aria-hidden="true">!</span><div><strong>Antes de un piloto real</strong><span>Faltan corredor y paradas, operador, pagador, responsable de datos y firmante del cierre. Esta pantalla no envía nada a una autoridad.</span></div><span class="readiness-label">ALCANCE DE LA DEMO</span></aside>
+
+    <div class="work-intro"><div><p class="eyebrow">EL PRODUCTO / DEMO INTERACTIVA</p><h2>Del hallazgo al seguimiento.</h2></div><p>Prueba el flujo completo con casos inventados. Las sugerencias automatizadas orientan la revisión; nunca sustituyen a las personas responsables.</p></div>
 
     <div class="columns">
       <section class="panel form-panel" aria-labelledby="report-title">
@@ -56,7 +63,7 @@
       </div>
     </div>
 
-    <section class="promise-grid" aria-label="Condiciones de seguridad y alcance"><div><span>01</span><h3>Pago por saber</h3><p>La contribución pasa a <strong>pago elegible</strong> tras verificación. Monto, pagador y transferencia reales siguen pendientes.</p></div><div><span>02</span><h3>Persona, no puntuación</h3><p>Sin ranking de conductores, vigilancia laboral ni castigos automáticos. La clasificación ML solo sugiere una revisión.</p></div><div><span>03</span><h3>Sin reutilización silenciosa</h3><p>El conocimiento no alimenta seguros, licencias o entrenamiento autónomo sin nuevo permiso, pago y protección de ingresos.</p></div></section>
+    <section id="conditions" class="conditions-section" aria-labelledby="conditions-title"><div class="conditions-heading"><p class="eyebrow">DISEÑADO CON LÍMITES</p><h2 id="conditions-title">Principios que no se negocian.</h2></div><div class="promise-grid" aria-label="Condiciones de seguridad y alcance"><div><span>01 / COMPENSACIÓN</span><h3>Pago por saber</h3><p>La contribución pasa a <strong>pago elegible</strong> tras verificación. Monto, pagador y transferencia reales siguen pendientes.</p></div><div><span>02 / DIGNIDAD</span><h3>Persona, no puntuación</h3><p>Sin ranking de conductores, vigilancia laboral ni castigos automáticos. La clasificación ML solo sugiere una revisión.</p></div><div><span>03 / CONTROL</span><h3>Sin reutilización silenciosa</h3><p>El conocimiento no alimenta seguros, licencias o entrenamiento autónomo sin nuevo permiso, pago y protección de ingresos.</p></div></div></section>
   </main>
   <footer class="site-footer"><span>Ruta Clara · prototipo académico · Semana 7</span><span>Sin backend, datos personales ni reportes reales</span></footer>
 </body>

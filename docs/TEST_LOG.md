@@ -21,3 +21,10 @@
 - No public redeploy has occurred, so the course's **test-fix-redeploy** criterion is not yet met.
 - No real-driver or independent fresh-chat persona test was performed; any persona write-up must be labeled synthetic.
 - Actual sensor permission behavior on a supported phone and intermittent connectivity have not been tested.
+
+## Visual refinement pass
+
+- Reloaded the local app after the CSS/HTML changes. Desktop and 390 × 844 mobile layouts rendered without overlapping elements or horizontal overflow in the checked views.
+- On mobile, an invented report was submitted and focus moved to its newly created case. The form/map/ledger flow still works after the redesign.
+- White text on the primary button improved from approximately 3.29:1 to 5.0:1 contrast by darkening the teal background.
+- This is a local smoke test; no public deployment or independent persona test is claimed.
