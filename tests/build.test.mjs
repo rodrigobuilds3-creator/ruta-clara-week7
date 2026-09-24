@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { readFile, readdir } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -16,8 +17,12 @@ test("build includes only the public static app and preserves module links", asy
 
   const html = await readFile(join(root, "dist", "index.html"), "utf8");
   const app = await readFile(join(root, "dist", "app.js"), "utf8");
-  assert.match(html, /\.\/style-v2\.css/);
-  assert.match(html, /\.\/app\.js/);
-  assert.match(app, /\.\/lib\/model\.js/);
-  assert.match(app, /\.\/lib\/workflow\.js/);
+  const shortHash = (content) => createHash("sha256").update(content).digest("hex").slice(0, 12);
+  const css = await readFile(join(root, "dist", "style-v2.css"));
+  const model = await readFile(join(root, "dist", "lib", "model.js"));
+  const workflow = await readFile(join(root, "dist", "lib", "workflow.js"));
+  assert.ok(html.includes(`./style-v2.css?v=${shortHash(css)}`));
+  assert.ok(html.includes(`./app.js?v=${shortHash(app)}`));
+  assert.ok(app.includes(`./lib/model.js?v=${shortHash(model)}`));
+  assert.ok(app.includes(`./lib/workflow.js?v=${shortHash(workflow)}`));
 });

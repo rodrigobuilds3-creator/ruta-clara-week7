@@ -5,3 +5,5 @@ Las tres imágenes de esta carpeta provienen del navegador local en `http://127.
 Son evidencia de una **prueba técnica local**, no de un despliegue HTTPS, una prueba con conductores, ni un chat fresco de persona. No deben rotularse como esos entregables.
 
 `live-v1-rejected-counter.png` es distinta: proviene del primer despliegue HTTPS y muestra un defecto real del contador. El caso y el motivo son inventados; no representa una entrevista ni una reparación en campo.
+
+`live-v2-rejected-counter.png` muestra la reprueba en una sesión nueva de Chrome tras el segundo despliegue HTTPS: el mismo tipo de caso rechazado sigue contando como abierto. Ambas imágenes son evidencia mecánica de prueba–corrección–redespliegue, no de persona.

@@ -44,3 +44,9 @@
 - The HTTPS page loaded from the in-app browser without the authenticated GitHub session. An invented report `RC-015` was created and then rejected with a fictional reason.
 - **Observed defect:** `RC-015` remained “Rechazado · corregible” alongside the verified `RC-014`, but the counter dropped from “2 abiertos” to “1 abierto.” The screenshot is `evidence/live-v1-rejected-counter.png`. The rejected case is not closed and still requires correction, so excluding it understated pending work.
 - Fix: count every case except `closed` as unresolved and add a regression test for the rejected + verified combination. This entry records the fix locally; a second public deployment and retest are still required before claiming closure.
+
+## Second public deployment and retest
+
+- GitHub Actions run `35950343611` for commit `a91a261` succeeded (build 6 s, deploy 9 s). The CI suite passed 11/11 tests.
+- In a fresh Chrome tab at the public HTTPS URL, an invented `RC-015` was rejected while `RC-014` stayed verified. The counter remained at “2 abiertos,” matching the two unresolved cases. Evidence: `evidence/live-v2-rejected-counter.png`.
+- The previously open in-app-browser tab still showed “1 abierto” immediately after reload, while the fresh Chrome tab showed the fix. This is consistent with an older JavaScript module being cached; it is **not** evidence that the second deploy failed. To reduce that stale-session risk, the build now adds content-hash query versions to CSS, app.js and both imported modules. This additional packaging change has passed local tests but is not yet deployed at the time of this entry.
