@@ -14,6 +14,7 @@ Prototipo académico de la propuesta individual de Rodrigo Peña de León Pérez
 - **Pendiente:** URL HTTPS pública, dos despliegues, prueba de persona en chat fresco con capturas, vídeo, BUILDCHAT completo y entrega en Brightspace.
 - [Guía para grabar la demo](docs/DEMO_SHOTLIST.md).
 - [Protocolo para la prueba de persona](docs/PERSONA_TEST_PROTOCOL.md) (preparado, no ejecutado).
+- [Capturas técnicas locales](evidence/README.md) (no reemplazan capturas del chat de persona).
 
 ## Ejecutar
 

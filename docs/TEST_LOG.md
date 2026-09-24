@@ -34,5 +34,6 @@
 - `npm test`: 10/10 passed, including a build-manifest check that only `index.html`, CSS, JavaScript modules and the generated marker enter `dist/`.
 - `npm run build` completed; the packaged app opened at `http://127.0.0.1:4177/dist/` with the main form, map and ledger visible. A narrow browser screenshot showed the refreshed layout intact.
 - In that packaged app, an invented bache report created `RC-015`; simulated verification changed it from “Pendiente de verificar / Aún no elegible” to “Verificado · cierre pendiente / Pago elegible · no transferido.” This was a local browser smoke test, not a real payment or deployment.
+- Saved local browser screenshots in `evidence/`: `local-build-mobile.png`, `local-build-form-mobile.png` and `local-build-case-mobile.png`. The case screenshot predates the browser reload; the case is deliberately not persistent.
 - A persona test protocol is ready in `docs/PERSONA_TEST_PROTOCOL.md`. No fresh chat or participant observation has been performed.
 - GitHub authentication remains invalid; there is still no public URL, first/second deployment or redeployment after a public test.
