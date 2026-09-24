@@ -11,8 +11,8 @@ Prototipo académico de la propuesta individual de Rodrigo Peña de León Pérez
 - Paquete publicable: `npm run build` genera `dist/` con solo cinco archivos estáticos y referencias versionadas por contenido para evitar módulos obsoletos en caché.
 - PDF de packet: entregable separado, fuera de este repositorio.
 - [Repositorio público de la semana 7](https://github.com/rodrigobuilds3-creator/ruta-clara-week7), con historial de desarrollo. Un flujo de GitHub Pages prueba la app y publica únicamente `dist/`.
-- URL HTTPS: [Ruta Clara en GitHub Pages](https://rodrigobuilds3-creator.github.io/ruta-clara-week7/). Dos despliegues completos: el primero reveló un error del contador de casos rechazados; el segundo corrigió el resultado y se comprobó en una sesión nueva.
-- **Pendiente:** prueba de persona en chat fresco con capturas, vídeo, BUILDCHAT completo y entrega en Brightspace. La versión con referencias de assets versionadas aún requiere publicación y comprobación.
+- URL HTTPS: [Ruta Clara en GitHub Pages](https://rodrigobuilds3-creator.github.io/ruta-clara-week7/). Tres despliegues completos: el primero reveló un error del contador de casos rechazados; el segundo lo corrigió; el tercero versionó los assets para reducir lecturas obsoletas en caché. La corrección se comprobó en el navegador público.
+- **Pendiente:** prueba de persona en chat fresco con capturas, vídeo, BUILDCHAT completo y entrega en Brightspace.
 - [Guía para grabar la demo](docs/DEMO_SHOTLIST.md).
 - [Protocolo para la prueba de persona](docs/PERSONA_TEST_PROTOCOL.md) (preparado, no ejecutado).
 - [Capturas técnicas locales](evidence/README.md) (no reemplazan capturas del chat de persona).

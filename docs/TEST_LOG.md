@@ -50,3 +50,10 @@
 - GitHub Actions run `35950343611` for commit `a91a261` succeeded (build 6 s, deploy 9 s). The CI suite passed 11/11 tests.
 - In a fresh Chrome tab at the public HTTPS URL, an invented `RC-015` was rejected while `RC-014` stayed verified. The counter remained at “2 abiertos,” matching the two unresolved cases. Evidence: `evidence/live-v2-rejected-counter.png`.
 - The previously open in-app-browser tab still showed “1 abierto” immediately after reload, while the fresh Chrome tab showed the fix. This is consistent with an older JavaScript module being cached; it is **not** evidence that the second deploy failed. To reduce that stale-session risk, the build now adds content-hash query versions to CSS, app.js and both imported modules. This additional packaging change has passed local tests but is not yet deployed at the time of this entry.
+
+## Third public deployment · cache-safe asset URLs
+
+- GitHub Actions run `35950620406` for commit `016a69f` succeeded (build 10 s, deploy 8 s). The 11-test suite passed in CI.
+- The build emits URLs such as `app.js?v=<content-hash>` and `workflow.js?v=<content-hash>`; the build test checks that the query values match the content. Only the five public static files enter `dist/`.
+- In the in-app browser that had previously displayed the stale module, opening the versioned page URL `?release=016a69f` and repeating the invented rejected-case test showed “2 abiertos.” Evidence: `evidence/live-v3-versioned-assets.png`.
+- A long-lived browser tab can still cache the HTML document itself. The version query forced a fresh document for this retest; do not claim that every previously open tab updates automatically.
