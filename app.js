@@ -4,7 +4,7 @@ import { BOUNDS, createCase, correctCase, transitionCase, validateReport, countU
 const $ = (id) => document.getElementById(id);
 const svgNS = "http://www.w3.org/2000/svg";
 const state = { items: [], selectedId: null, point: null, editingId: null, nextNumber: 15 };
-const STATUS = { submitted: "Pendiente de verificar", verified: "Verificado · cierre pendiente", rejected: "Rechazado · corregible", closed: "Cerrado (demo)" };
+const STATUS = { submitted: "Reporte recibido · demo", verified: "Verificación simulada · cierre pendiente", rejected: "Rechazo simulado · corregible", closed: "Cierre simulado" };
 const TRIAGE = { rutina: "Revisión ordinaria", revisar: "Revisar pronto", priorizar: "Priorizar revisión" };
 
 function el(tag, className, text) {
@@ -64,7 +64,7 @@ function getInput() {
 function updateTriage() {
   const input = getInput();
   $("char-count").textContent = `${input.description.length}/240`;
-  $("triage-text").textContent = input.triage ? `${TRIAGE[input.triage]} · kNN con ejemplos inventados. Sugerencia para un humano; no prueba el riesgo ni decide pago o sanción.` : "Ingresa una muestra válida para ver una sugerencia. No decide por nadie.";
+  $("triage-text").textContent = input.triage ? `${TRIAGE[input.triage]} · modelo de prueba con ejemplos inventados, no validado en campo. Sugiere qué revisar; no confirma el riesgo ni decide pago o sanción.` : "Modelo de prueba con ejemplos inventados, no validado en campo. Sugiere qué revisar; no confirma riesgos ni decide pagos o sanciones.";
 }
 
 function showErrors(errors) {
@@ -136,7 +136,7 @@ function renderCaseDetail() {
   root.append(el("h3", "", `${item.id} · ${item.category}`), el("p", "detail-sub", "Caso inventado · sin unidad ni persona identificable"));
   root.append(el("p", "detail-description", item.description));
   const facts = el("div", "detail-facts");
-  facts.append(fact("Estado", STATUS[item.status]), fact("Contribución", item.paymentEligible ? "Pago elegible · no transferido" : "Aún no elegible"), fact("Sugerencia ML", TRIAGE[item.triage] || "Sin clasificación"), fact("Responsable real", "Por asignar antes de piloto"));
+  facts.append(fact("Estado", STATUS[item.status]), fact("Contribución", item.paymentEligible ? "Elegibilidad hipotética (demo)" : "No habilitada (demo)"), fact("Revisión sugerida", TRIAGE[item.triage] || "Sin clasificación"), fact("Responsable real", "Por asignar antes de piloto"));
   root.append(facts);
   if (item.remedy) root.append(el("p", "detail-description", `Remedio registrado en simulación: ${item.remedy}`));
   const history = el("ol", "history");
@@ -148,17 +148,17 @@ function renderCaseDetail() {
     const label = el("label", "", "Motivo para rechazar (mín. 12 caracteres)"); label.htmlFor = "decision-note";
     const note = el("textarea"); note.id = "decision-note"; note.maxLength = 240; note.placeholder = "Explica qué evidencia falta (ejemplo inventado)";
     const actions = el("div", "workflow-actions");
-    const verify = el("button", "", "Simular verificación independiente"); verify.type = "button"; verify.onclick = () => act(item, "verify", "");
+    const verify = el("button", "", "Simular verificación"); verify.type = "button"; verify.onclick = () => act(item, "verify", "");
     const reject = el("button", "danger", "Simular rechazo"); reject.type = "button"; reject.onclick = () => act(item, "reject", note.value);
     const correct = el("button", "", "Corregir como conductor"); correct.type = "button"; correct.onclick = () => startCorrection(item);
     actions.append(verify, reject, correct); box.append(label, note, actions);
   } else if (item.status === "rejected") {
     const actions = el("div", "workflow-actions"); const correct = el("button", "", "Corregir y reenviar"); correct.type = "button"; correct.onclick = () => startCorrection(item); actions.append(correct); box.append(actions);
   } else if (item.status === "verified") {
-    box.append(el("p", "detail-sub", "El pago sería elegible ya; no depende del cierre. Falta un pagador y monto reales."));
+    box.append(el("p", "detail-sub", "En esta demo, la verificación activa una elegibilidad hipotética. No hay pagador ni monto reales, y no se transfiere dinero."));
     const label = el("label", "", "Remedio y firma de cierre simulados (mín. 12 caracteres)"); label.htmlFor = "remedy-note";
     const note = el("textarea"); note.id = "remedy-note"; note.maxLength = 240; note.placeholder = "Ej. Reparación confirmada en visita ficticia";
-    const actions = el("div", "workflow-actions"); const close = el("button", "", "Simular cierre por autoridad"); close.type = "button"; close.onclick = () => act(item, "close", note.value); actions.append(close); box.append(label, note, actions);
+    const actions = el("div", "workflow-actions"); const close = el("button", "", "Simular cierre por responsable del caso"); close.type = "button"; close.onclick = () => act(item, "close", note.value); actions.append(close); box.append(label, note, actions);
   } else { box.append(el("p", "detail-sub", "Historial conservado en esta sesión. Ninguna entidad real recibió el caso.")); }
   root.append(box);
 }

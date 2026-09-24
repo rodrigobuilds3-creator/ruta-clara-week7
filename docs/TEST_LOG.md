@@ -57,3 +57,11 @@
 - The build emits URLs such as `app.js?v=<content-hash>` and `workflow.js?v=<content-hash>`; the build test checks that the query values match the content. Only the five public static files enter `dist/`.
 - In the in-app browser that had previously displayed the stale module, opening the versioned page URL `?release=016a69f` and repeating the invented rejected-case test showed “2 abiertos.” Evidence: `evidence/live-v3-versioned-assets.png`.
 - A long-lived browser tab can still cache the HTML document itself. The version query forced a fresh document for this retest; do not claim that every previously open tab updates automatically.
+
+## 24 Sep 2026 · local UI truthfulness and synthetic copy review
+
+- Revised the hero, seeded verified-case card, status, payment label, pilot-principles section, sensor disclosure, and footer so the UI does not imply a real verifier, payer, worker-control capability, personal-data screening, or measured completion time.
+- The motion disclosure states the three-second capture, derived peak definition, tab-memory lifetime, raw-event discard, optional review-suggestion role, lack of field validation, and absence of GPS/continuous-route tracking. A fresh text-only synthetic retest found this understandable but still reasonably questioned the sensor's unproven value. It remains optional; no phone or real driver was tested.
+- `npm test`: **12/12 passed** locally after the final copy. `npm run build` emitted five static public files. These local checks do not establish a new public deployment.
+- The public app/repository remain at the third verified deployment until the new revision is pushed and CI/deploy succeeds. A post-deploy live smoke test is still required.
+- The synthetic persona conversation received manual text transcriptions, not screenshot attachments. Existing evidence screenshots predate this copy; visual persona evaluation remains incomplete. No demo video has been recorded.

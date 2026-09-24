@@ -1,40 +1,39 @@
-# Prueba de persona · protocolo pendiente de ejecución
+# Synthetic Persona Review — Method and Evidence Record
 
-**Estado:** preparado, no realizado. Este documento no sustituye el chat fresco ni constituye evidencia de una persona real. La persona es una hipótesis sintética basada en el Blueprint provisional del Equipo 4; no se presenta como investigación de campo.
+**Date:** 24 Sep 2026
+**Status:** Partial, text-only synthetic review completed; image-based validation remains incomplete. The final copy revision is local and still requires deployment/retest.
+**Participant:** ChatGPT-generated hypothetical persona “Doña Mari”; no human driver was interviewed.
 
-## Preparación
+## Method limitation
 
-1. Publicar primero una versión HTTPS accesible de Ruta Clara. Si se prueba la versión local, indicar que fue local y no atribuirle un despliegue público.
-2. Abrir **un chat nuevo** y compartir tres capturas sin datos reales: portada móvil, formulario/mapa y caso verificado con “Pago elegible · no transferido”. Registrar la fecha, versión o commit y URL probada.
-3. Pegar el siguiente mensaje inicial sin respuestas preescritas. Conservar la conversación íntegra y las capturas originales.
+A fresh ChatGPT conversation was opened in the course project. Three mobile screenshots are preserved in the evidence folder, but they were **not attached to that conversation**. Instead, I provided ordered, manually transcribed screen text and interaction context, explicitly told the model not to infer colors, visual hierarchy, touch-target size, or phone behavior, and asked it to say when the evidence was insufficient. The chat’s results are therefore a synthetic **copy/comprehension review**, not a visual usability test, a real-user test, or field research. The before/after screenshot images must not be described as having been seen by the persona.
 
-## Mensaje inicial para el chat nuevo
+## Persona
 
-> Actúa como una persona de prueba **sintética e hipotética**, no como conductor real entrevistado. Imagina que manejas transporte colectivo en un corredor suburbano del Valle de México, tienes un teléfono de gama media y conectividad irregular, y desconfías de que la empresa use tus reportes para vigilarte. Evalúa solo lo que ves en las capturas y en la URL que te daré. No inventes funciones ni resultados que no estén visibles. Primero dime, con tus palabras, qué crees que ofrece esta pantalla, quién te pagaría y cuándo; luego intenta explicar cómo reportarías un bache y cómo sabrías que alguien lo atendió. Señala cada punto confuso, cada promesa que no creas y el texto exacto que cambiarías. Sé crítico. Después te mostraré la siguiente pantalla. No supongas que representas a conductores reales.
+The persona is a fictional hypothesis, not a representative sample: “Doña Mari,” an imagined colectivo driver in the Valley of Mexico, using a mid-range Android phone with intermittent connectivity and concern about surveillance or sanctions. All evaluation replies were in Spanish to match the Spanish interface. No claim is made that a real driver holds these views.
 
-## Tareas y preguntas de seguimiento
+## Ordered tasks and findings
 
-Mostrar una pantalla por vez. Pedir a la persona sintética que piense en voz alta **antes** de revelar la siguiente:
+1. **Home screen (local-build-mobile.png, text transcription only).** The persona understood “Crear reporte de prueba” as a report action and expected a named case owner, review, result, and evidence of closure. It could not infer who sees the report or who can authorize closure. It noted that the page itself says the required real pilot roles are still missing.
+2. **Report form (local-build-form-mobile.png, text transcription only).** The persona could identify the sequence—choose a risk, write an invented description, select the example point, then submit—but could not infer the risk options or the map behavior from the text alone. It flagged “kNN” as jargon and the collapsed “phone signal” label as unclear about the sensor and data.
+3. **Case detail (local-build-case-mobile.png, text transcription only).** It correctly distinguished report sent, verified, closure pending, and not transferred. It questioned the basis for “payment eligible” without a payer or amount; asked who can sign a real repair; and correctly said that a 12-character simulated remedy is not evidence of a real repair. It could not infer access, deletion, custody, or retention rules.
 
-1. Portada: ¿qué crees que pasa al pulsar “Crear reporte de prueba”? ¿Qué podría costarte este reporte?
-2. Formulario/mapa: elige categoría, redacta un riesgo inventado y ubícalo. ¿Qué te haría abandonar aquí? ¿La indicación de no usar datos reales se entiende?
-3. Caso: identifica la diferencia entre reportado, verificado, pago elegible y cierre. ¿Dónde buscarías la evidencia de reparación?
-4. Confianza: ¿qué significa “no se reutiliza” para vigilancia, seguros o automatización? ¿Qué información falta para creer la promesa?
-5. Prioridad: si solo pudiéramos corregir una cosa antes de mostrar esto a una persona real, ¿cuál sería y por qué?
+## Copy changes and text-only retest
 
-No inducir un resultado favorable ni pedir que finja haber utilizado un teléfono real. Si el chat interpreta “pago elegible” como pago realizado, registrar la confusión; no corregirla hasta obtener su reacción espontánea.
+The local interface now:
 
-## Registro mínimo para PERSONA PDF
+- explains the optional sensor as a three-second motion sample on compatible phones with permission, defines the peak as the largest movement variation relative to gravity during that sample, says raw events are discarded and derived values live only in tab memory until reload/close, and clarifies that GPS/continuous tracking are not used;
+- says that the sample is included only to demonstrate how an optional signal can change the review-suggestion label; the relationship is not field-validated and does not set a pothole threshold;
+- removes the “kNN” term from user-facing copy and says the model is invented, not field-validated, and cannot confirm a hazard or decide payment/sanctions;
+- labels payment status “Elegibilidad hipotética (demo)” and says there is no real payer or amount and no transfer;
+- identifies simulated verification and case-closing roles without implying independent or authorized officials; states that reports exist only in the current tab’s memory and are not submitted or server-persisted;
+- removes the unmeasured “≈ 1 min” completion-time claim and labels the task “Reporte breve.”
 
-| Campo | Completar después de la sesión |
-| --- | --- |
-| Fecha, duración, plataforma y enlace/versión | Pendiente |
-| Naturaleza del participante | IA sintética, no usuario real |
-| Tareas y capturas presentadas | Pendiente |
-| Frases literales de la conversación | Pendiente |
-| Tres fricciones principales y severidad | Pendiente |
-| Cambio implementado con commit y nueva captura | Pendiente |
-| Reprueba y resultado | Pendiente |
-| Límites de la evidencia | Pendiente |
+In text-only retests, the synthetic persona said the revised wording made the sensor's duration, retained values, and possible effect on the suggestion understandable. It understood that the sensor can be skipped without invalidating a report, but still questioned why a user should grant permission before field evidence shows that the signal adds value. That is an unresolved product-validity question, not a copy fix: the sensor must remain optional, and a real pilot should not collect it unless its utility is established with consent. The persona also could not determine real-pilot access, deletion, payer, signer, or evidence-of-repair rules. Those remain product/governance decisions, not usability claims demonstrated by this prototype.
 
-El PDF final debe incluir el intercambio auténtico o un enlace verificable al chat, las capturas, el cambio de código y la reprueba. No completar los campos pendientes por inferencia.
+## Verification and evidence boundary
+
+- The final local copy revision, including the definition of “peak (g)” and its effect on the review-suggestion label, passed **12/12** tests; the static build emitted five public files. This has not yet been verified by public CI or a new deployment.
+- Screenshots in evidence/ predate the copy changes. No post-fix screenshot has been attached to the persona conversation or captured as visual retest evidence.
+- This review does not test phone sensor permission behavior, intermittent connectivity, offline operation, real task completion time, adoption, payment, authority response, or safety outcomes.
+- Before describing a screenshot-based persona test as complete, attach the ordered, updated screenshots to a fresh synthetic-persona chat and repeat the tasks. For stronger validity, also test with consenting real users under an approved research protocol; do not represent an AI persona as a substitute for them.

@@ -15,7 +15,7 @@ test("rechaza texto corto, coordenadas fuera de mapa y telemetría extrema", () 
   const errors = validateReport({ ...input, description: "breve", lat: 30, peakG: 4, repeats: 0 });
   assert.deepEqual(Object.keys(errors).sort(), ["description", "location", "motion", "repeats"]);
 });
-test("se paga por verificación, no por cierre", () => {
+test("la elegibilidad de pago simulada sigue a la verificación, no al cierre", () => {
   const original = createCase(input, "RC-001", "t1");
   assert.equal(original.paymentEligible, false);
   const verified = transitionCase(original, "verify", "t2");
@@ -25,7 +25,7 @@ test("se paga por verificación, no por cierre", () => {
   const closed = transitionCase(verified, "close", "t3", "Reparación ficticia confirmada");
   assert.equal(closed.paymentEligible, true);
   assert.equal(countUnresolved([closed]), 0);
-  assert.match(closed.history.at(-1).action, /Cierre firmado en simulación/);
+  assert.match(closed.history.at(-1).action, /Cierre registrado en la demo/);
 });
 test("no se puede cerrar sin verificación o sin remedio", () => {
   const original = createCase(input, "RC-002", "t1");

@@ -1,34 +1,30 @@
 # Ruta Clara · Week 7 Business Bending
 
-Prototipo académico de la propuesta individual de Rodrigo Peña de León Pérez (Adversary): reporte pagado de riesgos viales, verificación independiente y cierre responsable. Está basado en un Blueprint provisional del Equipo 4, que **aún no documenta votación ni consenso final**. Ese archivo de trabajo no se publica en este repositorio.
+An academic prototype by Rodrigo Peña de León Pérez (Adversary). It tests a simulated hazard-report workflow; it does not establish a real worker need, municipal partnership, payment, or safety result. The Team 4 Blueprint remains a draft pending a live team discussion and vote.
 
-## Estado
+## Current evidence
 
-- Packet pre-código: [`docs/PACKET.md`](docs/PACKET.md), con mockup generado, benchmark, Mermaid, arquitectura, pruebas y condiciones.
-- Implementación: mapa ilustrativo, formulario validado, kNN entrenado solo con ejemplos inventados, muestra opt-in de movimiento o simulación, registro de casos y controles de roles simulados.
-- Diseño: interfaz renovada de estilo startup, con portada de producto, navegación, estados legibles y adaptación móvil. [Revisión de diseño](docs/DESIGN_REVIEW.md).
-- Pruebas: `npm test` (11 pasan al 23 sep 2026). La prueba manual confirmó alta, verificación/pago elegible, validación de muestra vacía y foco en el caso creado.
-- Paquete publicable: `npm run build` genera `dist/` con solo cinco archivos estáticos y referencias versionadas por contenido para evitar módulos obsoletos en caché.
-- PDF de packet: entregable separado, fuera de este repositorio.
-- [Repositorio público de la semana 7](https://github.com/rodrigobuilds3-creator/ruta-clara-week7), con historial de desarrollo. Un flujo de GitHub Pages prueba la app y publica únicamente `dist/`.
-- URL HTTPS: [Ruta Clara en GitHub Pages](https://rodrigobuilds3-creator.github.io/ruta-clara-week7/). Tres despliegues completos: el primero reveló un error del contador de casos rechazados; el segundo lo corrigió; el tercero versionó los assets para reducir lecturas obsoletas en caché. La corrección se comprobó en el navegador público.
-- **Pendiente:** prueba de persona en chat fresco con capturas, vídeo, BUILDCHAT completo y entrega en Brightspace.
-- [Guía para grabar la demo](docs/DEMO_SHOTLIST.md).
-- [Protocolo para la prueba de persona](docs/PERSONA_TEST_PROTOCOL.md) (preparado, no ejecutado).
-- [Capturas técnicas locales](evidence/README.md) (no reemplazan capturas del chat de persona).
+- [`docs/PACKET.md`](docs/PACKET.md) contains the pre-code scope, generated mockup, benchmark and local substitute, Mermaid flows, architecture, acceptance criteria, and limitations.
+- The Spanish-language website uses an illustrative SVG map, a validated form, a deterministic model trained on invented examples, an optional three-second phone-motion sample, a local-session case ledger, and simulated verifier/case-owner actions. The model is not field validated and cannot decide workflow outcomes.
+- All entered report text and derived values exist only in browser-tab memory until reload or close. The form does not ask for personal information, but does not technically screen free text. There is no backend, account, database, remote telemetry, or external report submission.
+- The acceptance boundary is software workflow behavior only. It is not worker control, an independent review, real closure, real compensation, offline support, or proof of demand.
+- The local substitute **Atizapán te Escucha** must be tested before making a claim that Ruta Clara fills a distinct reporting gap. See the source notes in the packet.
+- [`docs/TEST_LOG.md`](docs/TEST_LOG.md) records unit/build checks, live-release defects and fixes. Current test counts and deployment state are updated there only after they are actually verified.
+- [`docs/PERSONA_TEST_PROTOCOL.md`](docs/PERSONA_TEST_PROTOCOL.md) records a fresh synthetic persona's text-only review. No screenshots were attached to that chat; it is not a visual or real-driver study.
+- [`docs/DEMO_SHOTLIST.md`](docs/DEMO_SHOTLIST.md) is a read-aloud script, not a recorded MP4.
+- [`docs/DECISIONS.md`](DECISIONS.md) records product decisions and evidence boundaries.
 
-## Ejecutar
-
-Desde esta carpeta:
+## Run locally
 
 ```bash
 python3 -m http.server 4177
 ```
 
-Abrir `http://127.0.0.1:4177/`. Ejecutar pruebas con `npm test`. Para comprobar exactamente el paquete a publicar, ejecutar `npm run build` y abrir `http://127.0.0.1:4177/dist/` mientras corre el servidor. Publicar **solo `dist/`**, nunca la raíz del repositorio. `dist/` está ignorado por Git y no contiene la documentación ni los PDFs.
+Open `http://127.0.0.1:4177/`. Run the test suite with `npm test`; build the public static package with `npm run build`. The GitHub Pages workflow publishes only `dist/`, never the repository documentation or PDFs.
 
-No hay servidor de aplicación, base de datos, credenciales, telemetría remota ni persistencia. Los casos desaparecen al recargar. El botón de sensor, si el dispositivo lo soporta, solicita permiso solo al pulsarlo y descarta los eventos crudos tras una ventana de tres segundos. No pruebes con datos reales.
+## Public project
 
-## Límites del prototipo
+- [Live demo](https://rodrigobuilds3-creator.github.io/ruta-clara-week7/)
+- [Week 7 source repository](https://github.com/rodrigobuilds3-creator/ruta-clara-week7)
 
-El mapa no representa un corredor confirmado. El modelo kNN no está validado en campo y no estima seguridad. Las acciones de verificador y autoridad son simulaciones para probar el flujo, no permisos reales. “Pago elegible” no significa dinero transferido. Para un piloto real faltan actores, compensación, protección de datos, baseline, mantenimiento, soporte, prueba con conductores y autorización del equipo.
+For a future real pilot, first establish a user-valued failure in existing channels, an actual corridor and operator, a data controller and access/deletion policy, worker consent, a payer and compensation terms, a qualified verifier, and a named institutional closure owner. If the municipal substitute works for drivers, do not build a duplicate reporting ledger.

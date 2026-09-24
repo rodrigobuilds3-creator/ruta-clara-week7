@@ -1,30 +1,66 @@
-# Demo video · shot list para Rodrigo
+# Week 7 Live Demo · Teleprompter
 
-**Estado:** guía para grabar, no video realizado. La consigna pide 3 minutos de recorrido del URL en vivo + 30 segundos sobre qué cambió tu opinión.
+**Recording status: not recorded.** This is a seven-slide, read-aloud script for a 3:00 live-URL walkthrough plus the required 0:30 “what changed my mind.” Each slide has one primary screen action. The interface labels remain in Spanish; narration is in English. Keep cases and descriptions invented, use the publicly deployed build, and do not imply field validation, real verification, or money transfer.
 
-## 0:00–0:25 · Qué resuelve
+## Slide 1 · 0:00–0:30 · State the boundary
 
-Abre el URL en vivo. En una frase: “Ruta Clara registra conocimiento de riesgos aportado voluntariamente por conductores; lo verifica y muestra quién debe cerrar el caso.” Aclara que el corredor y los casos son inventados y que no se envía nada a una autoridad.
+**On-screen action:** Open the public HTTPS demo. Point to the “Demo con datos inventados” banner and the “0 reportes enviados a una autoridad” note.
 
-## 0:25–1:20 · Conductor
+**Read aloud:**
 
-Como conductor, elige un punto del mapa, selecciona un riesgo, escribe una descripción inventada y muestra que el campo valida límites. Abre la señal opcional para explicar que los datos de movimiento son simulados o tomados con permiso, sin traza continua. Señala que el kNN solo sugiere una prioridad de revisión.
+> This is Ruta Clara, a Week 7 academic prototype. It explores one narrow workflow: create an invented road-hazard report, inspect its status, and keep unresolved cases visible. The map, user, verification, and closure are simulated. Nothing is sent to a government office, and this screen does not show evidence of a real driver need.
 
-## 1:20–2:20 · Verificación y pago elegible
+## Slide 2 · 0:30–1:00 · Enter a fictional report
 
-Crea el reporte. La interfaz debe llevarte al caso. Usa “Simular verificación independiente” y muestra que el estado cambia a verificado, **el pago se vuelve elegible** y el cierre sigue pendiente. No digas que se transfirió dinero: falta pagador y monto reales.
+**On-screen action:** Select “Bache.” Enter the invented sentence “A sample pothole before a fictional stop.” Click “Elegir punto de ejemplo.”
 
-## 2:20–3:00 · Cierre y sombra
+**Read aloud:**
 
-Deja un caso sin resolver visible y en otro registra un remedio simulado para cerrar. Muestra la cronología de acciones y termina en los principios: sin ranking laboral, sanción automática ni reutilización de conocimiento para seguros, licencias o entrenamiento autónomo sin nueva aprobación y compensación.
+> I will use a fictional pothole and the example point, not a real route or location. The form checks required fields, but it does not screen every personal detail from free text, so I will not enter names, plates, or real incident information. Completion time, offline behavior, and suitability for older phones have not been tested.
 
-## 3:00–3:30 · Qué cambió tu opinión
+## Slide 3 · 1:00–1:30 · Show the optional signal
 
-Habla en tus palabras. Una opción basada en el build: “Pensaba que el reto principal era detectar el riesgo; al construirlo vi que detectar es la parte fácil. Lo difícil es nombrar a quien verifica, paga y cierra sin convertir la información del trabajador en vigilancia.” Cambia la frase si no refleja tu experiencia.
+**On-screen action:** Click “Usar muestra simulada.” Point to the sensor disclosure and the automated review suggestion. Do not request real sensor permission during the recording.
 
-## Comprobación antes de subir
+**Read aloud:**
 
-- URL HTTPS pública o accesible al evaluador, comprobada sin estar en tu sesión local.
-- Repositorio GitHub correcto de semana 7, no el remoto de semana 3.
-- MP4 `DEMO_Rodrigo.mp4`; audio y pantalla legibles; no datos personales reales.
-- `PACKET`, `PERSONA` y `BUILDCHAT` PDFs con evidencia auténtica; este shot list no los sustituye.
+> The motion sensor is optional. For this recording I am using an invented sample, not measuring a vehicle. On a compatible phone with permission, the prototype can read motion for three seconds, calculate a peak, and discard raw events. This model is not validated in the field. Its label is only a suggestion; it cannot confirm a pothole.
+
+## Slide 4 · 1:30–2:00 · Create and inspect
+
+**On-screen action:** Click “Crear reporte de prueba.” Show the newly created case and its history.
+
+**Read aloud:**
+
+> Submitting creates a case only in this browser tab’s memory. It is not an institutional report or a durable record. I can inspect the invented description, location, and history here. If I reload or close the tab, the demo state is lost. A real service would need an identified data controller, access rules, retention, deletion, and a worker-approved purpose.
+
+## Slide 5 · 2:00–2:30 · Simulate verification
+
+**On-screen action:** Click “Simular verificación” once for the new test case. Point to the resulting simulated status and the still-open counter.
+
+**Read aloud:**
+
+> This control simulates a verification decision. It is operated in the same demo by the same anonymous user; there is no independent verifier here. The case remains open until a separate simulated closure step. That separation lets us test the workflow rule, but it does not prove that a real person inspected the road or that a repair occurred.
+
+## Slide 6 · 2:30–3:00 · Explain payment and closure honestly
+
+**On-screen action:** Point to “Elegibilidad hipotética (demo),” “Responsable real: Por asignar,” and the unresolved count. Leave the case open; do not simulate a closure.
+
+**Read aloud:**
+
+> “Hypothetical eligibility” is only a demo label. There is no payer, amount, or transfer. The real case owner and closure signer are also unknown. I am leaving the case open because an entered sentence is not proof of repair. Before a pilot, we would need a named institution, agreed evidence, funding, and worker-approved data rules.
+
+## Slide 7 · 3:00–3:30 · What changed my mind
+
+**On-screen action:** Show the unresolved-case list, then hold on the public URL and repository links.
+
+**Read aloud:**
+
+> I began assuming that a clearer ledger might fill a reporting gap. Research changed that: Atizapán already describes a municipal route for pothole reports. Then a rejected-but-correctable case exposed a bug in my unresolved count. I changed my mind: first prove a distinct worker-valued failure in existing channels; if those channels work, do not build a duplicate ledger.
+
+## Before recording
+
+- Open the HTTPS URL in a clean tab and verify the deployed copy, not a local server.
+- Use invented text and the example point; do not use an actual driver, route, event, name, plate, or phone sensor reading.
+- Keep narration slow and legible. This document is designed as seven separate large-type pages in the companion PDF.
+- Save the actual recording as `DEMO_Rodrigo.mp4` only after recording it. Do not submit this script as if it were video evidence.
