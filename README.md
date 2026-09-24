@@ -10,8 +10,8 @@ Prototipo académico de la propuesta individual de Rodrigo Peña de León Pérez
 - Pruebas: `npm test` (10 pasan al 23 sep 2026). La prueba manual confirmó alta, verificación/pago elegible, validación de muestra vacía y foco en el caso creado.
 - Paquete publicable: `npm run build` genera `dist/` con solo cinco archivos estáticos. La versión empaquetada se abrió y revisó en el navegador local; esto **no** es un despliegue público.
 - PDF de packet: entregable separado, fuera de este repositorio.
-- Repositorio local independiente con historial de commits; falta publicar en GitHub y hacer push.
-- **Pendiente:** URL HTTPS pública, dos despliegues, prueba de persona en chat fresco con capturas, vídeo, BUILDCHAT completo y entrega en Brightspace.
+- [Repositorio público de la semana 7](https://github.com/rodrigobuilds3-creator/ruta-clara-week7), con historial de desarrollo. Un flujo de GitHub Pages prueba la app y publica únicamente `dist/`.
+- **Pendiente:** confirmar URL HTTPS pública y dos despliegues reales, prueba de persona en chat fresco con capturas, vídeo, BUILDCHAT completo y entrega en Brightspace.
 - [Guía para grabar la demo](docs/DEMO_SHOTLIST.md).
 - [Protocolo para la prueba de persona](docs/PERSONA_TEST_PROTOCOL.md) (preparado, no ejecutado).
 - [Capturas técnicas locales](evidence/README.md) (no reemplazan capturas del chat de persona).

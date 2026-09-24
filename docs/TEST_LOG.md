@@ -36,4 +36,4 @@
 - In that packaged app, an invented bache report created `RC-015`; simulated verification changed it from “Pendiente de verificar / Aún no elegible” to “Verificado · cierre pendiente / Pago elegible · no transferido.” This was a local browser smoke test, not a real payment or deployment.
 - Saved local browser screenshots in `evidence/`: `local-build-mobile.png`, `local-build-form-mobile.png` and `local-build-case-mobile.png`. The case screenshot predates the browser reload; the case is deliberately not persistent.
 - A persona test protocol is ready in `docs/PERSONA_TEST_PROTOCOL.md`. No fresh chat or participant observation has been performed.
-- GitHub authentication remains invalid; there is still no public URL, first/second deployment or redeployment after a public test.
+- The dedicated public repository was created and the first nine local commits were pushed on 23 Sep 2026. A GitHub Pages workflow has been prepared, but no successful deployment or public URL has yet been verified.
