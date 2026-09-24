@@ -1,6 +1,6 @@
 # Ruta Clara · Week 7 Business Bending
 
-Prototipo académico de la propuesta individual de Rodrigo Peña de León Pérez (Adversary): reporte pagado de riesgos viales, verificación independiente y cierre responsable. Está basado en el [Blueprint del Equipo 4](/Users/rodrigopenadeleon/Downloads/BLUEPRINT%2007_team4.pdf), que **aún no documenta votación ni consenso final**.
+Prototipo académico de la propuesta individual de Rodrigo Peña de León Pérez (Adversary): reporte pagado de riesgos viales, verificación independiente y cierre responsable. Está basado en un Blueprint provisional del Equipo 4, que **aún no documenta votación ni consenso final**. Ese archivo de trabajo no se publica en este repositorio.
 
 ## Estado
 
@@ -9,7 +9,7 @@ Prototipo académico de la propuesta individual de Rodrigo Peña de León Pérez
 - Diseño: interfaz renovada de estilo startup, con portada de producto, navegación, estados legibles y adaptación móvil. [Revisión de diseño](docs/DESIGN_REVIEW.md).
 - Pruebas: `npm test` (10 pasan al 23 sep 2026). La prueba manual confirmó alta, verificación/pago elegible, validación de muestra vacía y foco en el caso creado.
 - Paquete publicable: `npm run build` genera `dist/` con solo cinco archivos estáticos. La versión empaquetada se abrió y revisó en el navegador local; esto **no** es un despliegue público.
-- PDF de packet: `../../../../output/pdf/PACKET_Rodrigo_Pena_WEEK7.pdf`.
+- PDF de packet: entregable separado, fuera de este repositorio.
 - Repositorio local independiente con historial de commits; falta publicar en GitHub y hacer push.
 - **Pendiente:** URL HTTPS pública, dos despliegues, prueba de persona en chat fresco con capturas, vídeo, BUILDCHAT completo y entrega en Brightspace.
 - [Guía para grabar la demo](docs/DEMO_SHOTLIST.md).
