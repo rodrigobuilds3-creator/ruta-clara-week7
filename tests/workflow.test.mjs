@@ -43,6 +43,13 @@ test("rechazo requiere motivo y permite corrección sin pago automático", () =>
   assert.equal(corrected.paymentEligible, false);
   assert.equal(corrected.history.length, 3);
 });
+test("un reporte rechazado y corregible sigue contando como abierto", () => {
+  const original = createCase(input, "RC-004", "t1");
+  const rejected = transitionCase(original, "reject", "t2", "Falta una ubicación revisable");
+  const verified = transitionCase(createCase(input, "RC-005", "t1"), "verify", "t2");
+  assert.equal(countUnresolved([rejected, verified]), 2);
+  assert.equal(countUnresolved([correctCase(rejected, input, "t3"), verified]), 2);
+});
 test("geodatos de mapa regresan a la ubicación elegida", () => {
   const geo = pointToGeo(.5, .5);
   assert.ok(geo.lat >= BOUNDS.minLat && geo.lat <= BOUNDS.maxLat);

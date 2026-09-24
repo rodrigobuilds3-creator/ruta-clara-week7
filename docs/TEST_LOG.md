@@ -37,3 +37,10 @@
 - Saved local browser screenshots in `evidence/`: `local-build-mobile.png`, `local-build-form-mobile.png` and `local-build-case-mobile.png`. The case screenshot predates the browser reload; the case is deliberately not persistent.
 - A persona test protocol is ready in `docs/PERSONA_TEST_PROTOCOL.md`. No fresh chat or participant observation has been performed.
 - The dedicated public repository was created and the first nine local commits were pushed on 23 Sep 2026. A GitHub Pages workflow has been prepared, but no successful deployment or public URL has yet been verified.
+
+## First public deployment and live test
+
+- GitHub Actions run `35950091251` initially failed because Pages had not yet been enabled. After choosing “GitHub Actions” as the Pages source, rerun attempt #2 succeeded: build 9 s, deploy 8 s, HTTPS URL `https://rodrigobuilds3-creator.github.io/ruta-clara-week7/`.
+- The HTTPS page loaded from the in-app browser without the authenticated GitHub session. An invented report `RC-015` was created and then rejected with a fictional reason.
+- **Observed defect:** `RC-015` remained “Rechazado · corregible” alongside the verified `RC-014`, but the counter dropped from “2 abiertos” to “1 abierto.” The screenshot is `evidence/live-v1-rejected-counter.png`. The rejected case is not closed and still requires correction, so excluding it understated pending work.
+- Fix: count every case except `closed` as unresolved and add a regression test for the rejected + verified combination. This entry records the fix locally; a second public deployment and retest are still required before claiming closure.

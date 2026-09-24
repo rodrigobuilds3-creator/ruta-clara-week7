@@ -7,11 +7,12 @@ Prototipo académico de la propuesta individual de Rodrigo Peña de León Pérez
 - Packet pre-código: [`docs/PACKET.md`](docs/PACKET.md), con mockup generado, benchmark, Mermaid, arquitectura, pruebas y condiciones.
 - Implementación: mapa ilustrativo, formulario validado, kNN entrenado solo con ejemplos inventados, muestra opt-in de movimiento o simulación, registro de casos y controles de roles simulados.
 - Diseño: interfaz renovada de estilo startup, con portada de producto, navegación, estados legibles y adaptación móvil. [Revisión de diseño](docs/DESIGN_REVIEW.md).
-- Pruebas: `npm test` (10 pasan al 23 sep 2026). La prueba manual confirmó alta, verificación/pago elegible, validación de muestra vacía y foco en el caso creado.
+- Pruebas: `npm test` (11 pasan al 23 sep 2026). La prueba manual confirmó alta, verificación/pago elegible, validación de muestra vacía y foco en el caso creado.
 - Paquete publicable: `npm run build` genera `dist/` con solo cinco archivos estáticos. La versión empaquetada se abrió y revisó en el navegador local; esto **no** es un despliegue público.
 - PDF de packet: entregable separado, fuera de este repositorio.
 - [Repositorio público de la semana 7](https://github.com/rodrigobuilds3-creator/ruta-clara-week7), con historial de desarrollo. Un flujo de GitHub Pages prueba la app y publica únicamente `dist/`.
-- **Pendiente:** confirmar URL HTTPS pública y dos despliegues reales, prueba de persona en chat fresco con capturas, vídeo, BUILDCHAT completo y entrega en Brightspace.
+- URL HTTPS: [Ruta Clara en GitHub Pages](https://rodrigobuilds3-creator.github.io/ruta-clara-week7/). El primer despliegue se verificó fuera de la sesión de GitHub; se detectó un error del contador de casos rechazados y esta revisión prepara la segunda publicación.
+- **Pendiente:** verificar la segunda publicación y la corrección en vivo; prueba de persona en chat fresco con capturas, vídeo, BUILDCHAT completo y entrega en Brightspace.
 - [Guía para grabar la demo](docs/DEMO_SHOTLIST.md).
 - [Protocolo para la prueba de persona](docs/PERSONA_TEST_PROTOCOL.md) (preparado, no ejecutado).
 - [Capturas técnicas locales](evidence/README.md) (no reemplazan capturas del chat de persona).
