@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183451">
+  <meta name="description" content="Ruta Clara: prototipo simulado de reportes de riesgo vial con verificación y control del conocimiento de conductores.">
+  <title>Ruta Clara · Piloto simulado</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Ir al contenido</a>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">◆</span><div><strong>Ruta Clara</strong><small>Conocimiento que cuida la ruta</small></div></div>
+    <span class="demo-pill">Piloto simulado · datos inventados</span>
+  </header>
+  <main id="main" class="shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div><p class="eyebrow">SEMANA 07 / RODRIGO · ADVERSARY</p><h1 id="hero-title">Reportar no basta. <em>Hay que responder.</em></h1><p>Un registro de riesgos para conductores de colectivo: el conocimiento se verifica, se reconoce y no desaparece cuando el caso sigue abierto.</p></div>
+      <aside class="hero-note"><strong>Antes de un piloto real</strong><span>Faltan corredor y paradas, operador, pagador, responsable de datos y firmante del cierre. Esta pantalla no envía nada a una autoridad.</span></aside>
+    </section>
+
+    <div class="columns">
+      <section class="panel form-panel" aria-labelledby="report-title">
+        <div class="panel-head"><div><p class="eyebrow">01 / CONTRIBUCIÓN VOLUNTARIA</p><h2 id="report-title">Reportar un riesgo</h2></div><span class="step-chip">≈ 1 min</span></div>
+        <p class="muted">Todo queda en esta sesión de demostración. No ingreses nombres, placas ni datos reales.</p>
+        <form id="report-form" novalidate>
+          <div class="field"><label for="category">Tipo de riesgo</label><select id="category" name="category" required><option value="">Selecciona una opción</option><option>Bache</option><option>Obstrucción</option><option>Señalización</option><option>Otro</option></select><small class="error" id="category-error"></small></div>
+          <div class="field"><label for="description">¿Qué observaste?</label><textarea id="description" name="description" minlength="12" maxlength="240" rows="3" placeholder="Ej. Bache que obliga a frenar antes de la parada (dato inventado)"></textarea><div class="field-meta"><span>Sin datos de personas o unidades</span><span id="char-count">0/240</span></div><small class="error" id="description-error"></small></div>
+          <div class="field"><span class="label">Ubicación ilustrativa</span><p class="field-hint">Toca el mapa o usa el botón “Elegir punto de ejemplo”.</p><output id="location-output">Aún no elegida</output><button class="text-button" type="button" id="example-point">Elegir punto de ejemplo</button><small class="error" id="location-error"></small></div>
+          <details class="sensor-box"><summary>Señal opcional del teléfono <span>▾</span></summary><p>Una muestra breve de movimiento puede ayudar a priorizar la revisión. No prueba un bache y nunca califica al conductor. No se guarda una traza.</p><div class="sensor-actions"><button type="button" class="small-button" id="sensor-button">Tomar una muestra (opt-in)</button><button type="button" class="small-button secondary" id="sim-button">Usar muestra simulada</button></div><div class="field"><label for="peak-g">Pico de movimiento (g)</label><input id="peak-g" type="number" min="0" max="3" step="0.01" value="0.35"><small class="error" id="motion-error"></small></div><div class="field"><label for="repeats">Observaciones de ejemplo</label><input id="repeats" type="number" min="1" max="10" step="1" value="2"><small class="error" id="repeats-error"></small></div><p id="sensor-status" role="status">Valor inicial simulado: 0.35 g · 2 observaciones.</p></details>
+          <div class="triage" id="triage-box"><span class="triage-icon">✳</span><div><strong>Ayuda de clasificación ML</strong><p id="triage-text">Selecciona un punto y describe un riesgo. La sugerencia no decide por nadie.</p></div></div>
+          <button type="submit" class="primary-button" id="submit-button">Crear reporte de prueba <span aria-hidden="true">→</span></button>
+          <button type="button" class="cancel-button" id="cancel-edit" hidden>Cancelar corrección</button>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <div class="right-column">
+        <section class="panel map-panel" aria-labelledby="map-title">
+          <div class="panel-head"><div><p class="eyebrow">02 / GEODATOS</p><h2 id="map-title">Mapa de corredor ilustrativo</h2></div><span class="map-tag">No validado</span></div>
+          <p class="muted">Atizapán · coordenadas de demostración. No representa paradas o riesgos reales.</p>
+          <div class="map-wrap"><svg id="route-map" viewBox="0 0 600 330" role="img" aria-label="Mapa esquemático; pulsa para ubicar un reporte de prueba" tabindex="0" preserveAspectRatio="none">
+            <rect width="600" height="330" fill="#edf3f0"/>
+            <path class="park" d="M0 0H130L78 100H0ZM470 0H600V86L515 105Z M10 280L122 226L155 330H0Z"/>
+            <g class="streets"><path d="M0 45L600 100M0 120L600 20M0 220L600 170M80 0L130 330M210 0L270 330M350 0L410 330M510 0L550 330M0 300L600 250"/><path d="M0 178L600 320M0 70L530 330"/></g>
+            <path class="route-halo" d="M62 237C140 210 151 125 219 131S307 215 357 183S447 115 545 79"/><path class="route-line" d="M62 237C140 210 151 125 219 131S307 215 357 183S447 115 545 79"/>
+            <circle cx="62" cy="237" r="7" class="route-end"/><circle cx="545" cy="79" r="7" class="route-end"/>
+            <text x="33" y="276" class="map-label">PUNTO A</text><text x="497" y="61" class="map-label">PUNTO B</text>
+            <g id="map-markers"></g><g id="selected-marker"></g>
+          </svg><div class="map-corner">Puntos y rutas ficticios</div></div>
+          <div class="map-legend"><span><i class="legend-line"></i> Corredor ilustrativo</span><span><i class="legend-dot"></i> Reporte</span><span><i class="legend-pin"></i> Tu punto</span></div>
+        </section>
+        <section class="panel ledger-panel" aria-labelledby="ledger-title"><div class="panel-head"><div><p class="eyebrow">03 / TRAZABILIDAD</p><h2 id="ledger-title">Casos y cierre</h2></div><span class="count-pill" id="unresolved-count">0 abiertos</span></div><p class="muted">Verificación y cierre son controles de demostración. No sustituyen la firma de un responsable real.</p><div id="case-list" class="case-list"></div><div id="case-detail" class="case-detail" tabindex="-1" aria-live="polite"></div></section>
+      </div>
+    </div>
+
+    <section class="promise-grid" aria-label="Condiciones de seguridad y alcance"><div><span>01</span><h3>Pago por saber</h3><p>La contribución pasa a <strong>pago elegible</strong> tras verificación. Monto, pagador y transferencia reales siguen pendientes.</p></div><div><span>02</span><h3>Persona, no puntuación</h3><p>Sin ranking de conductores, vigilancia laboral ni castigos automáticos. La clasificación ML solo sugiere una revisión.</p></div><div><span>03</span><h3>Sin reutilización silenciosa</h3><p>El conocimiento no alimenta seguros, licencias o entrenamiento autónomo sin nuevo permiso, pago y protección de ingresos.</p></div></section>
+  </main>
+  <footer class="site-footer"><span>Ruta Clara · prototipo académico · Semana 7</span><span>Sin backend, datos personales ni reportes reales</span></footer>
+</body>
+</html>
